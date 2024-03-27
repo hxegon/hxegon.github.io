@@ -6,12 +6,11 @@
   };
 
   outputs = { self, nixpkgs }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in rec {
-      devShell.x86_64-linux = pkgs.mkShell {
-        buildInputs = with pkgs; [ ruby_3_2 ];
-      };
-    };
+  let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    buildInputs = [ pkgs.ruby_3_2 ];
+  in rec {
+    devShell.${system} = pkgs.mkShell { inherit buildInputs; };
+  };
 }
