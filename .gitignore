@@ -1,2 +1,5 @@
-.hugo_build.lock
-resources/_gen
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
