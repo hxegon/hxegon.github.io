@@ -12,5 +12,16 @@
     buildInputs = [ pkgs.ruby_3_2 ];
   in rec {
     devShell.${system} = pkgs.mkShell { inherit buildInputs; };
+
+    # packages.${system}.default =
+      #   pkgs.stdenv.mkDerivation {
+        #     inherit buildInputs;
+        #     name = "hxegon.github.io";
+        #     src = ./.;
+        #     buildPhase = ''
+        #       echo "Generating blog"
+        #       bundle install && bundle exec jekyll build
+        #     '';
+        #   };
   };
 }
