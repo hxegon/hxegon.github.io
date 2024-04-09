@@ -61,3 +61,5 @@ exclude:
   - flake.nix
   - flake.lock
   - justfile
+  - Gemfile
+  - Gemfile.lock
